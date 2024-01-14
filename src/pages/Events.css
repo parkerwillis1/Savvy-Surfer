@@ -1,0 +1,90 @@
+/* Base Styles */
+#eventCalendar {
+    width: 80%;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Event Entry Styling */
+.event-entry {
+    margin-bottom: 30px;
+    padding: 25px;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #e3f2fd, #ffffff);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.event-entry:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(145deg, #d1e9fb, #ffffff);
+}
+
+/* Event Title */
+.event-entry h3 {
+    color: #0277bd;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+/* Event Details */
+.event-entry p {
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+/* Event Actions */
+.event-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.button {
+    padding: 8px 15px;
+    background-color: #0288d1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.button:hover {
+    background-color: #026ba6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #eventCalendar {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .event-entry {
+        padding: 20px;
+    }
+
+    .event-entry h3 {
+        font-size: 1.2em;
+    }
+}
+
+/* Additional Media Queries for Various Screen Sizes */
+@media (max-width: 480px) {
+    .event-entry {
+        padding: 15px;
+    }
+
+    .event-entry p {
+        font-size: 0.9em;
+    }
+}
