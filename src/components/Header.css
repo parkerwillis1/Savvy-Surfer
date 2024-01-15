@@ -1,8 +1,8 @@
 .header {
   display: flex;
   justify-content: space-between;
-  background-color: #0288d1; /* Deep blue background */
-  background-image: linear-gradient(to right, #026ba6, #0288d1, #029dd4); /* Gradient effect */
+  background-color: #083454; /* Deep blue background */
+  background-image: #083454;
   color: white;
   width: 100%;
   box-sizing: border-box;
