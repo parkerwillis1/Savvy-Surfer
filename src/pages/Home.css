@@ -1,200 +1,112 @@
-/* Base Styles */
-:root {
-    --main-bg-color: #f0f8ff;
-    --highlight-color: #083454;
-    --text-color: #333;
-    --button-bg-color: #ffcc00;
-    --button-hover-bg-color: #e6b800;
-    --transition-speed: 0.3s;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 .home-container {
-    text-align: center;
-    background-color: var(--main-bg-color);
-    font-family: 'Helvetica Neue', sans-serif;
+    font-family: Arial, sans-serif;
 }
 
-/* Hero Section */
 .hero-section {
     position: relative;
-    width: 100%;
-    height: 400px;
+    height: 70vh;
     overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: var(--highlight-color);
-    color: white;
-    padding: 0;
-    margin: 0;
 }
 
 .hero-video {
     width: 100%;
     height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
     object-fit: cover;
-    opacity: 0.75;
 }
 
 .hero-content {
-    position: relative;
-    z-index: 1;
-    animation: fadeIn 2s ease-in-out;
-    font-size: 1.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
 }
 
 .explore-button {
-    background-color: var(--button-bg-color);
-    color: black;
-    padding: 15px 30px;
-    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #0277bd;
+    color: white;
     border: none;
     border-radius: 5px;
+    font-size: 1em;
     cursor: pointer;
-    font-size: 1.25em;
-    transition: transform var(--transition-speed) ease-in-out, 
-                background-color var(--transition-speed) ease;
 }
 
 .explore-button:hover {
-    background-color: var(--button-hover-bg-color);
-    transform: scale(1.1);
+    background-color: #005b9f;
 }
 
-/* Featured Tutorials Section */
-.featured-tutorials {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 40px;
-    background: linear-gradient(to bottom, var(--main-bg-color), #d6e4ff);
+section {
+    padding: 40px 20px;
+    text-align: center;
 }
 
-.tutorial-card {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: transform var(--transition-speed) ease-in-out;
-}
-
-.tutorial-card:hover {
-    transform: translateY(-10px);
-}
-
-/* Upcoming Events Section */
-.upcoming-events {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 40px;
-    background-color: var(--main-bg-color);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: transform var(--transition-speed) ease-in-out;
-    background: linear-gradient(to bottom, var(--main-bg-color), #d6e4ff);
-}
-
-.event-card {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: transform var(--transition-speed) ease-in-out;
-}
-
-.event-card:hover {
-    transform: translateY(-10px);
-}
-
-/* Community Feedback Section */
-.community-feedback {
-    padding: 40px;
-    margin-bottom: 30px;
-    background: rgba(0, 0, 0, 0.05);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: left;
-}
-
-.feedback-item {
+section h2 {
+    font-size: 1.8em;
+    color: #333;
     margin-bottom: 20px;
-    padding: 15px;
-    background: white;
-    border-left: 4px solid var(--highlight-color);
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive Design */
+section p {
+    font-size: 1.1em;
+    margin-bottom: 25px;
+    color: #666;
+}
+
+.link-button {
+    padding: 10px 20px;
+    background-color: #0288d1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.link-button:hover {
+    background-color: #026ba6;
+}
+
 @media (max-width: 768px) {
-    .hero-section {
-        height: 300px;
+    .hero-content h1 {
+        font-size: 2em;
     }
 
-    .explore-button {
+    .hero-content p {
         font-size: 1em;
     }
+}
 
-    .featured-tutorials, .upcoming-events, .community-feedback {
-        padding: 20px;
+@media (max-width: 480px) {
+    .hero-section {
+        height: 50vh;
     }
-}
 
-/* Hover Effects for Interactivity */
-a:hover, button:hover {
-    opacity: 0.9;
-}
-
-/* Gradient Overlay for Hero Video */
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
-    z-index: 0;
-}
-
-/* Parallax Effect for Background */
-.upcoming-events, .featured-tutorials, .community-feedback {
-    background-attachment: fixed;
-}
-
-/* Animated Scroll Buttons */
-.scroll-button {
-    animation: bounce 2s infinite;
-    position: relative;
-    bottom: 20px;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
+    .hero-content h1 {
+        font-size: 1.5em;
     }
-    40% {
-        transform: translateY(-30px);
-    }
-    60% {
-        transform: translateY(-15px);
-    }
-}
 
-/* Fancy Borders */
-.tutorial-card, .event-card {
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-left: 5px solid var(--highlight-color);
-}
+    .hero-content p {
+        font-size: 0.9em;
+    }
 
-/* Smooth Transitions for all hover effects */
-*:hover {
-    transition: all var(--transition-speed) ease-in-out;
+    section {
+        padding: 20px 10px;
+    }
+
+    section h2 {
+        font-size: 1.5em;
+    }
 }
